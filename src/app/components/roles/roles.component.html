@@ -1,6 +1,49 @@
-<p>roles works!</p>
-<p>{{firstName}}</p>
+<!-- <p>roles works!</p> -->
+<div class="row">
+    <div class="col-3">
+        <p>{{angularVersion}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{isActive}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{currentDate}}</p>
+    </div>
+    <div class="col-3">
+        {{selectedState}}
+    </div>
+</div>
 
-<p>{{version}}</p>
+<div class="row">
+    <div class="col-3">
+        <input type="text" class="form-control" [value]="angularVersion">
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="angularVersion">
+    </div>
+    <div class="col-3">
+        <input [type]="inputType">
+    </div>
+    <div class="col-3">
+        <input [type]="inputType1">
+    </div>
+    <div class="col-3 m-3">
+        <select [(ngModel)]="selectedState">
+            <option value="100">100</option>
+            <option value="300">300</option>
+            <option value="500">500</option>
+        </select>
+    </div>
+</div>
 
-<p>{{currentDate}}</p>
+<div class="row m-2">
+    <div class="col-3">
+        <button class="btn btn-warning" (click)="showWelcomeAlert()">Show Alert</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Hey there!')">Say hello</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="showMessage('Good Evening')">Greetings</button>
+    </div>
+</div>
