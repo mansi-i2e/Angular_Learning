@@ -1,6 +1,15 @@
 <!-- <p>designation works!</p> -->
 
 <div class="row">
+    @if (isLoader) {<div class="col-12 my-2 text-center">
+        <div class="spinner-border me-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <button class="btn btn-primary ms-2" type="button" disabled>
+            <span role="status">Loading...</span>
+        </button>
+    </div>}
+    @else {
     @for (item of designationList; track $index) {
     <div class="col-3">
         <div class="card" style="width: 18rem;">
@@ -11,5 +20,6 @@
             </div>
         </div>
     </div>
+    }
     }
 </div>

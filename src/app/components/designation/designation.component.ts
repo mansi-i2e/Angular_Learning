@@ -11,13 +11,16 @@ import { APIResponseModel, IDesignation } from '../../model/interface/role';
 export class DesignationComponent implements OnInit {
 
   designationList: IDesignation[] = [];
+  isLoader: boolean = true;
   masterService = inject(MasterService)
 
   ngOnInit(): void {
     this.masterService.getDesignation().subscribe((result: APIResponseModel) => {
       this.designationList = result.data;
-    },error => {
+      this.isLoader = false;
+    }, error => {
       alert("API error/ Network down")
+      this.isLoader = false;
     })
   }
 }
