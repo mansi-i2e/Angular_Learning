@@ -10,10 +10,14 @@ import { APIResponseModel } from '../model/interface/role';
 export class ClientService {
   private apiBaseUrl = 'api/api/ClientStrive/'; // Proxied path
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllClients(): Observable<APIResponseModel> {
     return this.http.get<APIResponseModel>(`${this.apiBaseUrl}GetAllClients`);
+  }
+
+  getllEmployee(): Observable<APIResponseModel> {
+    return this.http.get<APIResponseModel>(`${this.apiBaseUrl}GetAllEmployee`);
   }
 
   addUpdate(obj: Client): Observable<APIResponseModel> {
