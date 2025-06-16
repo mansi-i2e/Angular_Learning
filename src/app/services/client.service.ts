@@ -12,6 +12,10 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
+  getAllUsers(){
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
+  }
+
   getAllClients(): Observable<APIResponseModel> {
     return this.http.get<APIResponseModel>(`${this.apiBaseUrl}GetAllClients`);
   }
@@ -26,5 +30,9 @@ export class ClientService {
 
   deleteClient(id: number): Observable<APIResponseModel> {
     return this.http.delete<APIResponseModel>(`${this.apiBaseUrl}DeleteClientByClientId?clientId=${id}`);
+  }
+
+  addUpdateClientProject(obj: Client): Observable<APIResponseModel> {
+    return this.http.post<APIResponseModel>(`${this.apiBaseUrl}AddUpdateClientProject`, obj);
   }
 }
