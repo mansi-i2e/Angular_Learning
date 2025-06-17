@@ -4,31 +4,45 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { ClientComponent } from './components/client/client.component';
 import { ClientProjectComponent } from './components/client-project/client-project.component';
 import { InternComponent } from './components/intern/intern.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './service/auth.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'master',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
-        path: 'master',
-        component: MasterComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: "employee",
-        component: EmployeeComponent
-    },
-    {
-        path: "client",
-        component: ClientComponent
-    },
-    {
-        path: "client-project",
-        component: ClientProjectComponent
-    },
-    {
-        path: "intern",
-        component: InternComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'master',
+                component: MasterComponent
+            },
+            {
+                path: "employee",
+                component: EmployeeComponent
+            },
+            {
+                path: "client",
+                component: ClientComponent,
+                canActivate:[authGuard]
+            },
+            {
+                path: "client-project",
+                component: ClientProjectComponent
+            },
+            {
+                path: "intern",
+                component: InternComponent
+            },
+        ]
     },
 ];
