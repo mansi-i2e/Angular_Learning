@@ -14,6 +14,19 @@ export interface APIResponseModel {
     data: any;
 }
 
+export interface ClientProject {
+    empName: string
+    empId: number
+    empCode: string
+    empEmailId: string
+    empDesignation: string
+    projectName: string
+    startDate: string
+    expectedEndDate: string
+    clientName: string
+    clientProjectId: number
+}
+
 export interface Employee {
     empName: string,
     empId: string,
