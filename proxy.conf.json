@@ -1,8 +1,0 @@
-{
-    "/api": {
-      "target": "https://freeapi.miniprojectideas.com",
-      "secure": true,
-      "pathRewrite": { "^/api": "" },
-      "changeOrigin": true
-    }
-  }
