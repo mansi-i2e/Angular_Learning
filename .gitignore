@@ -2,12 +2,14 @@
 
 # Compiled output
 /practice project 1/dist/
+/practice project 2/dist/
 /tmp
 /out-tsc
 /bazel-out
 
 # Node
 /practice project 1/node_modules/
+/practice project 2/node_modules/
 npm-debug.log
 yarn-error.log
 
